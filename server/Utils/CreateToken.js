@@ -9,7 +9,6 @@ const createToken = (res, id) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // only set to true in production
     sameSite: "Strict", // to prevent CSRF attacks
     maxAge: 1 * 60 * 60 * 1000, // 1 hour in milliseconds
   });
